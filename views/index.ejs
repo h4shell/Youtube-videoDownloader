@@ -1,34 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Youtube Downloader</title>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-			crossorigin="anonymous"
-		/>
-	</head>
-	<body>
-		<div class="container my-5">
-			<h1><strong>Youtube Downloader</strong></h1>
-			<form method="GET" action='/download' class="my-5">
-				<div class="form-group">
-					<label for="exampleInputEmail1"
-						>Video Link from Youtube</label
-					>
-					<input
-						type="text"
-						class="form-control"
-						placeholder="Enter Video URL"
-                        name="url"
-					/>
-				</div>
-				<button type="submit" class="btn btn-primary">Download</button>
-			</form>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT-Downloader</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        height: 100vh;
+        height: 100svh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(rgb(105, 27, 27), rgb(26, 26, 100));
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      h1 {
+        padding: 1rem 0.8rem;
+      }
+
+      .my-5 {
+        width: min(100% - 1rem, 400px);
+        margin: 0 !important;
+        padding: 0.2rem 0.8rem 0.8rem 0.8rem;
+        border-radius: 25px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .my-5 button {
+        width: 100px;
+        margin: 0 auto;
+      }
+
+      .my-6::after {
+        content: "";
+        inset: 0;
+        /* From https://css.glass */
+        background: rgba(0, 0, 0, 0.51);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8.5px);
+        -webkit-backdrop-filter: blur(8.5px);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 15px 1px;
+
+        position: absolute;
+        border-radius: 25px;
+        z-index: -1;
+      }
+
+      strong,
+      label {
+        color: white !important;
+      }
+
+      strong {
+        font-size: 2.3rem !important;
+      }
+
+      input[type="text"] {
+        border-radius: 20px !important;
+        background: rgba(124, 124, 124, 0.267);
+        border: none;
+        border-bottom: 2px solid rgba(240, 240, 240, 0.671);
+      }
+
+      input[type="text"]::placeholder {
+        color: rgb(167, 167, 167);
+      }
+
+      .container-video {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+
+      .container-video {
+        width: 100vw;
+        width: 100svw;
+        height: 100vh;
+        height: 100svw;
+      }
+
+      video {
+        width: 100vw;
+      }
+
+      @media (max-width: 1500px) {
+        video {
+          height: 100svh;
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5 my-6">
+      <div class="container-video">
+        <video
+          src="/bg/pexels-cottonbro-9669050 (1080p).mp4"
+          autoplay
+          muted
+          repeat
+          loop
+        ></video>
+      </div>
+      <h1><strong>YT-Downloader</strong></h1>
+      <form method="GET" action="/download" class="my-5">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Video Link from Youtube</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Video URL"
+            name="url"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Download</button>
+      </form>
+    </div>
+  </body>
 </html>
